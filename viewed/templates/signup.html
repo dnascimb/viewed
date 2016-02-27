@@ -1,6 +1,6 @@
 {% extends "homepage.html" %}
 {% block body %}
-        <h2 class="sub-header">Sign Up</h2>
+        <h2 class="sub-header">Viewed Registration</h2>
         <div class="container">
         {% if error %}<div class="alert alert-danger" role="alert">{{ error }}</div> {% endif %}
 
@@ -38,85 +38,54 @@
 
 			<!-- Text input-->
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="inputCompanyName">Company Name</label>  
-			  <div class="col-md-4">
-			  <input id="inputCompanyName" name="inputCompanyName" type="text" placeholder="Company Name" class="form-control input-md" value="{{ retCompany }}">
-			  <!--<span class="help-block">help</span>  -->
-			  </div>
-			</div>
-
-			<!-- Text input-->
-			<div class="form-group">
 			  <label class="col-md-4 control-label" for="inputEmail">Email</label>  
 			  <div class="col-md-4">
-			  <input id="inputEmail" name="inputEmail" type="email" placeholder="john@gym.com" class="form-control input-md" required value="{{ retEmail }}">
-			  <!--<span class="help-block">help</span>  -->
-			  </div>
-			</div>
-
-			<!-- Text input-->
-			<div class="form-group">
-			  <label class="col-md-4 control-label" for="inputPhone">Phone</label>  
-			  <div class="col-md-4">
-			  <input id="inputPhone" name="inputPhone" type="tel" placeholder="555-555-5555" class="form-control input-md" required value="{{ retPhone }}">
-			  <!--<span class="help-block">help</span>  -->
-			  </div>
-			</div>
-
-			<!-- Text input-->
-			<div class="form-group">
-			  <label class="col-md-4 control-label" for="inputStreetAddress1">Street Address 1</label>  
-			  <div class="col-md-4">
-			  <input id="inputStreetAddress1" name="inputStreetAddress1" type="text" placeholder="Street Address 1" class="form-control input-md" required value="{{ retStreet1 }}">
-			  <!--<span class="help-block">help</span>  -->
-			  </div>
-			</div>			
-			
-			<!-- Text input-->
-			<div class="form-group">
-			  <label class="col-md-4 control-label" for="inputStreetAddress2">Street Address 2</label>  
-			  <div class="col-md-4">
-			  <input id="inputStreetAddress2" name="inputStreetAddress2" type="text" placeholder="Street Address 2" class="form-control input-md" value="{{ retStreet2 }}">
-			  <!--<span class="help-block">help</span>  -->
-			  </div>
-			</div>			
-			
-			<!-- Text input-->
-			<div class="form-group">
-			  <label class="col-md-4 control-label" for="inputCity">City</label>  
-			  <div class="col-md-4">
-			  <input id="inputCity" name="inputCity" type="text" placeholder="City" class="form-control input-md" required value="{{ retCity }}">
-			  <!--<span class="help-block">help</span>  -->
-			  </div>
-			</div>
-
-			<!-- Text input-->
-			<div class="form-group">
-			  <label class="col-md-4 control-label" for="inputState">State/Prefecture/Province</label>  
-			  <div class="col-md-4">
-			  <input id="inputState" name="inputState" type="text" placeholder="state" class="form-control input-md" required value="{{ retState }}">
+			  <input id="inputEmail" name="inputEmail" type="email" placeholder="john@gmail.com" class="form-control input-md" required value="{{ retEmail }}">
 			  <!--<span class="help-block">help</span>  -->
 			  </div>
 			</div>
 			
 			<!-- Text input-->
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="inputZip">Zip/Postal Code</label>  
+			  <label class="col-md-4 control-label" for="inputZip">Zip Code</label>  
 			  <div class="col-md-4">
 			  <input id="inputZip" name="inputZip" type="text" placeholder="zip" class="form-control input-md" required value="{{ retZip }}">
 			  <!--<span class="help-block">help</span>  -->
 			  </div>
 			</div>
+
+			<!-- Select Basic -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="inputFOI">Field of Interest</label>
+			  <div class="col-md-4">
+			    <select id="inputFOI" name="inputFOI" class="form-control">
+			    {% for foi in foi_options %}
+                 <option value="{{foi.name}}">{{foi.name}}</option>
+                {% else %}
+                <option value="n/a">n/a</option>
+                {% endfor %}
+			    </select>
+			  </div>
+			</div>
 			
 			<!-- Text input-->
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="inputCountry">Country</label>  
+			  <label class="col-md-4 control-label" for="inputYears">Years Experience</label>  
 			  <div class="col-md-4">
-			  <input id="inputCountry" name="inputCountry" type="text" placeholder="country" class="form-control input-md" required value="{{ retCountry }}">
+			  <input id="inputYears" name="inputYears" type="text" placeholder="1" class="form-control input-md" value="{{ retYears }}">
 			  <!--<span class="help-block">help</span>  -->
 			  </div>
 			</div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" method="post">Submit</button>
+			
+			<!-- Button -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label"></label>  
+			  <div class="col-md-4">
+			  <button class="btn btn-lg btn-primary btn-block" type="submit" method="post">Register</button>
+			  </div>
+			</div>
+
+            
 			</fieldset>
           </form>
          </div>

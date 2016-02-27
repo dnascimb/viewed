@@ -45,3 +45,16 @@ class User(Base):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
+class FOI(Base):
+    __tablename__ = 'options_foi'
+    id = Column(String(36), primary_key=True)
+    name = Column(String(120), nullable=False)
+    updated_at = Column(DateTime, nullable=False)
+
+    def __init__(self, uid=None, user=None, updated_at=None):
+        self.id = uid
+        self.user = user
+        self.updated_at = updated_at      
+        
+    def __repr__(self):
+        return 'FOI' + self.__dict__        

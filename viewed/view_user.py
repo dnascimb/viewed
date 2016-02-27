@@ -6,10 +6,12 @@ from flask import request, session, redirect, url_for, abort, \
 from viewed.models import User
 from sqlalchemy import func
 from viewed.database import db_session
+from viewed.models import FOI
 
 @app.route('/new_user_request', methods=['GET'])
 def new_user_request():
-    return render_template('signup.html')
+    options = FOI.query.all()
+    return render_template('signup.html', foi_options=options)
 
 @app.route('/create_user_request', methods=['POST'])
 def create_user_request():
@@ -204,3 +206,4 @@ def checkEmailAvailable(request):
     else:
         return False
 
+ 
