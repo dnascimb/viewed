@@ -16,25 +16,7 @@
 			  <input id="inputName" name="inputName" type="text" placeholder="John Doe" class="form-control input-md" required value="{{ retUserName }}">
 			  <!--<span class="help-block">help</span>  -->
 			  </div>
-			</div>			
-			    
-			<!-- Password input-->
-			<div class="form-group">
-			  <label class="col-md-4 control-label" for="inputPassword">Password</label>  
-			  <div class="col-md-4">
-			  <input id="inputPassword" name="inputPassword" type="password" placeholder="Password" class="form-control input-md" required>
-			  <!--<span class="help-block">help</span>  -->
-			  </div>
-			</div>	
-
-			<!-- Password input-->
-			<div class="form-group">
-			  <label class="col-md-4 control-label" for="inputPassword2">Repeat Password</label>  
-			  <div class="col-md-4">
-			  <input id="inputPassword2" name="inputPassword2" type="password" placeholder="Repeat Password" class="form-control input-md" required>
-			  <!--<span class="help-block">help</span>  -->
-			  </div>
-			</div>	
+			</div>				
 
 			<!-- Text input-->
 			<div class="form-group">
@@ -60,7 +42,7 @@
 			  <div class="col-md-4">
 			    <select id="inputFOI" name="inputFOI" class="form-control">
 			    {% for foi in foi_options %}
-                 <option value="{{foi.name}}">{{foi.name}}</option>
+                 <option value="{{foi.id}}">{{foi.name}}</option>
                 {% else %}
                 <option value="n/a">n/a</option>
                 {% endfor %}
