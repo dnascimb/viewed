@@ -44,7 +44,7 @@ def create_user_request():
     db_session.add(u)
     db_session.commit()
 
-    flash('New user was successfully added')
+    flash("Thank you for registering! We look forward to helping you find your next job :)")
     return render_template('signup_success.html')
     #return redirect(url_for('new_user_request'))
 
